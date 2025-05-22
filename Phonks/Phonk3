@@ -1,7 +1,10 @@
-local StarterGui = game:GetService("StarterGui")
+if not isfile("xvchub_phonk3.mp3") then
+    writefile("xvchub_phonk3.mp3", game:HttpGet("https://github.com/XVCHub/Musics/raw/main/Phonks/PhonksSource/phonk3.mp3"))
+end
 
-StarterGui:SetCore("SendNotification", {
-    Title = "Currently phonk not have try again later",
-    Text = "",
-    Duration = 7
-})
+local sound = Instance.new("Sound", game:GetService("SoundService"))
+sound.SoundId = getcustomasset("xvchub_phonk3.mp3")
+sound.Volume = 10
+sound.Looped = false
+
+sound:Play()
