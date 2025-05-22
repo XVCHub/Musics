@@ -1,0 +1,7 @@
+local StarterGui = game:GetService("StarterGui")
+
+StarterGui:SetCore("SendNotification", {
+    Title = "Currently phonk not have try again later",
+    Text = "",
+    Duration = 7
+})
