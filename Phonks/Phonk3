@@ -2,9 +2,9 @@ if not isfile("xvchub_phonk3.mp3") then
     writefile("xvchub_phonk3.mp3", game:HttpGet("https://github.com/XVCHub/Musics/raw/main/Phonks/PhonksSource/phonk3.mp3"))
 end
 
-local s = Instance.new("Sound", game:GetService("SoundService"))
-s.SoundId = getcustomasset("xvchub_phonk3.mp3")
-s.Volume = 10
-s.Looped = false
+local phonk3 = Instance.new("Sound", game:GetService("SoundService"))
+phonk3.SoundId = getcustomasset("xvchub_phonk3.mp3")
+phonk3.Volume = 10
+phonk3.Looped = false
 
-s:Play()
+phonk3:Play()
