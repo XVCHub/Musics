@@ -1,0 +1,10 @@
+if not isfile("xvchub_phonk4.mp3") then
+    writefile("xvchub_phonk4.mp3", game:HttpGet("https://github.com/XVCHub/Musics/raw/main/Phonks/PhonksSource/Phonk4.mp3"))
+end
+
+local phonk4 = Instance.new("Sound", game:GetService("SoundService"))
+phonk4.SoundId = getcustomasset("xvchub_phonk4.mp3")
+phonk4.Volume = 10
+phonk4.Looped = false
+
+phonk4:Play()
