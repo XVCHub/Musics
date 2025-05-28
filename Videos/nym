@@ -1,0 +1,22 @@
+if not isfile("xvchub_nym.mp4") then
+    writefile("xvchub_nym.mp4", game:HttpGet("https://github.com/XVCHub/Musics/raw/main/Videos/VideosSource/nym.mp4"))
+end
+
+local screenGui = Instance.new("ScreenGui", game:GetService("CoreGui"))
+local videoFrame = Instance.new("VideoFrame", screenGui)
+videoFrame.Size = UDim2.new(0.5, 0, 0.5, 0)
+videoFrame.Position = UDim2.new(0.25, 0, 0.25, 0)
+videoFrame.Video = getcustomasset("fixed_nym2.mp4")
+videoFrame.Looped = false
+videoFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+
+task.spawn(function()
+    while not videoFrame.IsLoaded do
+        task.wait()
+    end
+    videoFrame:Play()
+end)
+
+videoFrame.Ended:Connect(function()
+    screenGui:Destroy()
+end)
