@@ -7,4 +7,4 @@ Star1.SoundId = getcustomasset("xvchub_Star1.mp3")
 Star1.Volume = 10
 Star1.Looped = false
 
-Star11:Play()
+Star1:Play()
