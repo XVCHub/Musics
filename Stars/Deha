@@ -2,21 +2,12 @@ if not isfile("xvchub_Star1.mp3") then
     writefile("xvchub_Star1.mp3", game:HttpGet("https://github.com/XVCHub/Musics/raw/main/Stars/StarsSource/deha.mp3"))
 end
 
--- Önceki sesi bul ve sil
-local old = game:GetService("SoundService"):FindFirstChild("XVCHub_Star1")
-if old then
-    old:Destroy()
-end
-
--- Yeni sesi oluştur
 local Star1 = Instance.new("Sound", game:GetService("SoundService"))
-Star1.Name = "XVCHub_Star1"
 Star1.SoundId = getcustomasset("xvchub_Star1.mp3")
 Star1.Volume = 10
 Star1.Looped = getgenv().loop == true
 Star1:Play()
 
--- Looped değilse bitince sil
 if not Star1.Looped then
     Star1.Ended:Connect(function()
         Star1:Destroy()
