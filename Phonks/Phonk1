@@ -5,6 +5,11 @@ end
 local phonk1 = Instance.new("Sound", game:GetService("SoundService"))
 phonk1.SoundId = getcustomasset("xvchub_phonk1.mp3")
 phonk1.Volume = 10
-phonk1.Looped = false
+phonk1.Looped = getgenv().loop == true
 
 phonk1:Play()
+if not phonk1.Looped then
+    phonk1.Ended:Connect(function()
+        phonk1:Destroy()
+    end)
+end
