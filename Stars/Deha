@@ -8,3 +8,8 @@ Star1.Volume = 10
 Star1.Looped = getgenv().loop == true
 
 Star1:Play()
+if not Star1.Looped then
+    Star1.Ended:Connect(function()
+        Star1:Destroy()
+    end)
+end
