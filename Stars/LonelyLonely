@@ -1,0 +1,15 @@
+if not isfile("xvchub_Star4.mp3") then
+    writefile("xvchub_Star4.mp3", game:HttpGet("https://github.com/XVCHub/Musics/raw/main/Stars/StarsSource/Lonely%20Lonely.mp3"))
+end
+
+local Star4 = Instance.new("Sound", game:GetService("SoundService"))
+Star4.SoundId = getcustomasset("xvchub_Star4.mp3")
+Star4.Volume = 10
+Star4.Looped = getgenv().loop == true
+Star4:Play()
+
+if not Star4.Looped then
+    Star4.Ended:Connect(function()
+        Star4:Destroy()
+    end)
+end
