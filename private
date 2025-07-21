@@ -1,0 +1,4 @@
+getgenv().c=h.sSDQpFeL;
+local self = {}
+self.value = true
+local body = "(...)"
