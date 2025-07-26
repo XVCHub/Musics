@@ -4,7 +4,7 @@ end
 
 local Star4 = Instance.new("Sound", game:GetService("SoundService"))
 Star4.SoundId = getcustomasset("xvchub_Star4.mp3")
-Star4.Volume = 10
+Star4.Volume = getgenv().volume or 1
 Star4.Looped = getgenv().loop == true
 Star4:Play()
 
