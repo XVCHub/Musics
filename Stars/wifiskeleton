@@ -1,0 +1,15 @@
+if not isfile("xvchub_Star5.mp3") then
+    writefile("xvchub_Star5.mp3", game:HttpGet("https://github.com/XVCHub/Musics/raw/main/Stars/StarsSource/Nope_your_too_late_i_already_died.mp3"))
+end
+
+local Star5 = Instance.new("Sound", game:GetService("SoundService"))
+Star5.SoundId = getcustomasset("xvchub_Star5.mp3")
+Star5.Volume = getgenv().volume or 1
+Star5.Looped = getgenv().loop == true
+Star5:Play()
+
+if not Star5.Looped then
+    Star5.Ended:Connect(function()
+        Star5:Destroy()
+    end)
+end
