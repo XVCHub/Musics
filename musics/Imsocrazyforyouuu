@@ -1,0 +1,15 @@
+if not isfile("xvchub_Imsocrazyforyouuu.mp3") then
+    writefile("xvchub_Imsocrazyforyouuu.mp3", game:HttpGet("https://github.com/XVCHub/Musics/raw/main/musics/sources/I_msocrazyforyouuu.mp3"))
+end
+
+local Imsocrazyforyouuu = Instance.new("Sound", game:GetService("SoundService"))
+Imsocrazyforyouuu.SoundId = getcustomasset("xvchub_Imsocrazyforyouuu.mp3")
+Imsocrazyforyouuu.Volume = getgenv().volume or 1
+Imsocrazyforyouuu.Looped = getgenv().loop == true
+Imsocrazyforyouuu:Play()
+
+if not Imsocrazyforyouuu.Looped then
+    Imsocrazyforyouuu.Ended:Connect(function()
+        Imsocrazyforyouuu:Destroy()
+    end)
+end
