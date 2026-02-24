@@ -1,0 +1,15 @@
+if not isfile("xvchub_convenience.mp3") then
+    writefile("xvchub_convenience.mp3", game:HttpGet("https://github.com/XVCHub/Musics/raw/main/musics/sources/convenience.mp3"))
+end
+
+local convenience = Instance.new("Sound", game:GetService("SoundService"))
+convenience.SoundId = getcustomasset("xvchub_convenience.mp3")
+convenience.Volume = getgenv().volume or 1
+convenience.Looped = getgenv().loop == true
+convenience:Play()
+
+if not convenience.Looped then
+    convenience.Ended:Connect(function()
+        convenience:Destroy()
+    end)
+end
