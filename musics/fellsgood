@@ -1,0 +1,15 @@
+if not isfile("xvchub_fellsgood.mp3") then
+    writefile("xvchub_fellsgood.mp3", game:HttpGet("https://github.com/XVCHub/Musics/raw/main/musics/sources/feelsgood.mp3"))
+end
+
+local fellsgood = Instance.new("Sound", game:GetService("SoundService"))
+fellsgood.SoundId = getcustomasset("xvchub_fellsgood.mp3")
+fellsgood.Volume = getgenv().volume or 1
+fellsgood.Looped = getgenv().loop == true
+fellsgood:Play()
+
+if not fellsgood.Looped then
+    fellsgood.Ended:Connect(function()
+        fellsgood:Destroy()
+    end)
+end
