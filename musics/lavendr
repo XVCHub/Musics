@@ -1,0 +1,15 @@
+if not isfile("xvchub_lavendr.mp3") then
+    writefile("xvchub_lavendr.mp3", game:HttpGet("https://github.com/XVCHub/Musics/raw/main/musics/sources/lavendr.mp3"))
+end
+
+local lavendr = Instance.new("Sound", game:GetService("SoundService"))
+lavendr.SoundId = getcustomasset("xvchub_lavendr.mp3")
+lavendr.Volume = getgenv().volume or 1
+lavendr.Looped = getgenv().loop == true
+lavendr:Play()
+
+if not lavendr.Looped then
+    lavendr.Ended:Connect(function()
+        lavendr:Destroy()
+    end)
+end
