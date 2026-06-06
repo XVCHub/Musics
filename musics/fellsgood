@@ -1,15 +1,17 @@
-if not isfile("xvchub_fellsgood.mp3") then
-    writefile("xvchub_fellsgood.mp3", game:HttpGet("https://github.com/XVCHub/Musics/raw/main/musics/sources/feelsgood.mp3"))
+path = "xvchub/mp3/feelsgood.mp3"
+
+if not isfile(path) then
+    writefile(path, game:HttpGet("https://github.com/XVCHub/Musics/raw/main/musics/sources/feelsgood.mp3"))
 end
 
-local fellsgood = Instance.new("Sound", game:GetService("SoundService"))
-fellsgood.SoundId = getcustomasset("xvchub_fellsgood.mp3")
-fellsgood.Volume = getgenv().volume or 1
-fellsgood.Looped = getgenv().loop == true
-fellsgood:Play()
+_ = Instance.new("Sound", game:GetService("SoundService"))
+_.SoundId = getcustomasset(path)
+_.Volume = getgenv().volume or 1
+_.Looped = getgenv().loop == true
+_:Play()
 
-if not fellsgood.Looped then
-    fellsgood.Ended:Connect(function()
-        fellsgood:Destroy()
+if not _.Looped then
+    _.Ended:Connect(function()
+        _:Destroy()
     end)
 end
