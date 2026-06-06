@@ -1,5 +1,3 @@
-if not isfolder("xvchub") then makefolder("xvchub") end
-
 path = "xvchub/mp3/blstudioloop.mp3"
 
 if not isfile(path) then
