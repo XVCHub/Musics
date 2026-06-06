@@ -3,7 +3,7 @@ path = "xvchub/mp3/blair.mp3"
 if not isfile(path) then
     writefile(path, game:HttpGet("https://github.com/XVCHub/Musics/raw/main/musics/sources/REDACTED.mp3"))
 end
-
+local a
 _ = Instance.new("Sound", game:GetService("SoundService"))
 _.SoundId = getcustomasset(path)
 _.Volume = getgenv().volume or 1
