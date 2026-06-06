@@ -1,9 +1,11 @@
-if not isfile("xvchub_blair_slowed.mp3") then
-    writefile("xvchub_blair_slowed.mp3", game:HttpGet("https://github.com/XVCHub/Musics/raw/main/musics/sources/REDACTED%20-%20slowed.mp3"))
+path = "xvchub/mp3/blair_slowed.mp3"
+
+if not isfile(path) then
+    writefile(path, game:HttpGet("https://github.com/XVCHub/Musics/raw/main/musics/sources/REDACTED%20-%20slowed.mp3"))
 end
 
-local _ = Instance.new("Sound", game:GetService("SoundService"))
-_.SoundId = getcustomasset("xvchub_blair_slowed.mp3")
+_ = Instance.new("Sound", game:GetService("SoundService"))
+_.SoundId = getcustomasset(path)
 _.Volume = getgenv().volume or 1
 _.Looped = getgenv().loop == true
 _:Play()
