@@ -14,4 +14,3 @@ if not _.Looped then
     _.Ended:Connect(function()
         _:Destroy()
     end)
-end
