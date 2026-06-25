@@ -1,4 +1,4 @@
-path = "xvchub/mp3/blair.mp3"
+path = "xvchub/mp3/teeth.mp3"
 
 if not isfile(path) then
     writefile(path, game:HttpGet("https://github.com/XVCHub/Musics/raw/main/musics/sources/REDACTED.mp3"))
